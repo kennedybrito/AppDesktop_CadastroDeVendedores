@@ -14,12 +14,17 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.MenuBar;
 import javafx.scene.layout.VBox;
 
 public class MainViewController implements Initializable {
 	
 	@FXML
+	private MenuBar menuPrincipal;
+	
+	@FXML
 	private MenuItem menuItemVendedor;
+	
 	
 	@FXML
 	private MenuItem menuItemDepartamento;
@@ -33,7 +38,8 @@ public class MainViewController implements Initializable {
 	}
 	@FXML
 	public void onMenuItemDepartamentoAction() {
-		System.out.println("teste departamento");
+		loadView("/gui/DepartamentList.fxml");
+
 		
 	}
 	@FXML
