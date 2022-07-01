@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="338.0" prefWidth="410.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gui.SellerListController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Label text="Cadastro de Departamento">
+      <font>
+        <Font name="System Bold" size="14.0" />
+      </font>
+      <VBox.margin>
+        <Insets left="10.0" top="5.0" />
+      </VBox.margin>
+    </Label>
+    <ToolBar>
+      <items>
+        <Button fx:id="btNew" mnemonicParsing="false" onAction="#onbtNewAction" text="Novo" />
+      </items>
+    </ToolBar>
+    <TableView fx:id="tableViewSeller" prefHeight="200.0" prefWidth="200.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Id" fx:id="tableColumnId" />
+        <TableColumn prefWidth="75.0" text="Nome" fx:id="tableColumnName" />
+        <TableColumn prefWidth="75.0" text="" fx:id="tableColumnEDIT" />
+        <TableColumn prefWidth="75.0" text="" fx:id="tableColumnREMOVE" />
+      </columns>
+    </TableView>
+  </children>
+</VBox>
