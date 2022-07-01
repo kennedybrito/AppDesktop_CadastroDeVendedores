@@ -23,6 +23,10 @@
         <Label fx:id="labelErrorName" prefHeight="16.0" prefWidth="194.0" text="" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1" />
         <TextField fx:id="txtName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <TextField fx:id="txtId" editable="false" prefWidth="173.00009999999747" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <TextField fx:id="txtEmail" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dpBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="txtBaseSalary" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboBoxDepartment" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
         <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
           <children>
             <Button fx:id="btSave" mnemonicParsing="false" onAction="#onBtSaveAction" text="Salvar" />
@@ -36,8 +40,6 @@
         <Label text="Aniversario" GridPane.columnIndex="0" GridPane.rowIndex="3" />
         <Label text="Salario" GridPane.columnIndex="0" GridPane.rowIndex="4" />
         <Label text="Departamento" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <TextField fx:id="txtEmail" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <TextField fx:id="txtBaseSalary" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <Label fx:id="labelErrorEmail" text="" GridPane.columnIndex="2" GridPane.rowIndex="2">
           <textFill>
             <Color red="0.800" green="0.000" blue="0.000" fx:id="x1" />
@@ -45,8 +47,6 @@
         </Label>
         <Label fx:id="labelErrorBirthDate" text="" textFill="$x1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Label fx:id="labelErrorBaseSalary" text="" textFill="$x1" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <DatePicker fx:id="dpBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="comboBoxDepartment" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="80.0" />
