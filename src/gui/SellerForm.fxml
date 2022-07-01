@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="162.5" prefWidth="474.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gui.SellerFormController">
+<AnchorPane prefHeight="260.49980000000505" prefWidth="511.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerFormController">
   <!-- TODO Add Nodes -->
   <children>
-    <GridPane prefHeight="113.0" prefWidth="430.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+    <GridPane prefHeight="227.0" prefWidth="430.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="17.0">
       <children>
         <Label prefWidth="19.0" text="Id" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <Label text="Nome" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <Label fx:id="labelErrorName" prefHeight="16.0" prefWidth="194.0" text="" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1" />
         <TextField fx:id="txtName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <TextField fx:id="txtId" editable="false" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <TextField fx:id="txtId" editable="false" prefWidth="173.00009999999747" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
           <children>
             <Button fx:id="btSave" mnemonicParsing="false" onAction="#onBtSaveAction" text="Salvar" />
             <Button fx:id="btCancel" mnemonicParsing="false" onAction="#onBtCancelAction" text="Cancelar" />
@@ -25,13 +31,31 @@
             <Insets top="5.0" />
           </padding>
         </HBox>
+        <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Aniversario" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label text="Salario" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label text="Departamento" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <TextField fx:id="txtEmail" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="txtBaseSalary" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Label fx:id="labelErrorEmail" text="" GridPane.columnIndex="2" GridPane.rowIndex="2">
+          <textFill>
+            <Color red="0.800" green="0.000" blue="0.000" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label fx:id="labelErrorBirthDate" text="" textFill="$x1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Label fx:id="labelErrorBaseSalary" text="" textFill="$x1" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <DatePicker fx:id="dpBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       </children>
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="45.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="208.0" />
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="191.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="200.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="150.0" />
       </columnConstraints>
       <rowConstraints>
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
