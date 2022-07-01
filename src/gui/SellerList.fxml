@@ -10,7 +10,7 @@
 <VBox prefHeight="338.0" prefWidth="410.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gui.SellerListController">
   <!-- TODO Add Nodes -->
   <children>
-    <Label text="Cadastro de Departamento">
+    <Label text="Cadastro de Vendedores">
       <font>
         <Font name="System Bold" size="14.0" />
       </font>
@@ -27,6 +27,9 @@
       <columns>
         <TableColumn prefWidth="75.0" text="Id" fx:id="tableColumnId" />
         <TableColumn prefWidth="75.0" text="Nome" fx:id="tableColumnName" />
+        <TableColumn prefWidth="75.0" text="Email" fx:id="tableColumnEmail" />
+        <TableColumn prefWidth="75.0" text="Aniversario" fx:id="tableColumnBirthDate" />
+        <TableColumn prefWidth="75.0" text="Salario" fx:id="tableColumnBaseSalary" />
         <TableColumn prefWidth="75.0" text="" fx:id="tableColumnEDIT" />
         <TableColumn prefWidth="75.0" text="" fx:id="tableColumnREMOVE" />
       </columns>
