@@ -3,14 +3,27 @@ package gui;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import db.DbException;
+import gui.util.Alerts;
 import gui.util.Constraints;
+import gui.util.Utils;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import model.entities.Department;
+import model.services.DepartmentService;
 
 public class DepartmentFormController implements Initializable{
+	
+	private Department entity;
+	
+	private DepartmentService service;
+	
+	
 	
 	@FXML
 	private TextField txtId;
@@ -27,15 +40,40 @@ public class DepartmentFormController implements Initializable{
 	@FXML
 	private Button btCancel;
 	
-	
-	@FXML 
-	public void onBtSaveAction() {
-		System.out.println("teste botao salvar");
+	public void setDepartment(Department entity) {
+		this.entity = entity;
 	}
 	
+	public void setDepartmentService(DepartmentService service) {
+		this.service = service;
+	}
 	@FXML 
-	public void onBtCancelAction() {
-		System.out.println("teste botao cancelar");
+	public void onBtSaveAction(ActionEvent event) {
+		
+		try {
+			entity= getFormData();
+			service.saveOrUpdate(entity);
+			Utils.currentStage(event).close();
+	
+		}catch (DbException e){
+			Alerts.showAlert("erro ao salvar objeto", null, e.getMessage(), AlertType.ERROR);
+			
+		}
+	}
+	
+	private Department getFormData() {
+		Department obj = new Department();
+		
+		obj.setId(Utils.tryParseToInt(txtId.getText()));
+		obj.setName(txtName.getText());
+		
+		return obj;
+		
+	}
+
+	@FXML 
+	public void onBtCancelAction(ActionEvent event) {
+		Utils.currentStage(event).close();
 	}
 	
 	@Override
@@ -47,5 +85,14 @@ public class DepartmentFormController implements Initializable{
 	private void initializeNodes() {
 		Constraints.setTextFieldInteger(txtId);
 		Constraints.setTextFieldMaxLength(txtName, 30);
+	}
+	
+	public void updateFormData() {
+		 if (entity == null) {
+			 throw new IllegalStateException("entity não instanciada");
+		 }
+		
+		txtId.setText(String.valueOf(entity.getId()));
+		txtName.setText(entity.getName());
 	}
 }
